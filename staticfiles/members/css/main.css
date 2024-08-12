@@ -1,0 +1,103 @@
+/* Common Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, rgba(255, 228, 225, 1), rgba(255, 192, 203, 1));
+    margin: 0;
+    padding: 0; /* Remove padding from body */
+    text-align: center;
+    height: 200vh;
+}
+
+main h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5em;
+    color: #ad1457;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.alert {
+    background-color: #ffc0cb; /* Pink background for notes */
+    border: 1px solid #ff69b4; /* Slightly darker pink border */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto; /* Centering the notes */
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to the left */
+}
+
+.alert h3 {
+    font-family: 'Satisfy', cursive;
+    font-size: 1.8em;
+    color: #c2185b;
+    margin-top: 0;
+    text-align: center;
+}
+
+.alert p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2em;
+    color: #6a1b9a;
+}
+
+.alert p2 {
+    float: right;
+    margin-bottom: 15px;
+    margin-right: 0px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2em;
+    color: #ad1457;
+}
+
+.add-note-button {
+    background-color: #ff80a4; /* A complementary pink color */
+    border: none;
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for size */
+    text-align: center;
+    text-decoration: none; /* No underline */
+    font-size: 1em; /* Font size */
+    margin: 10px 0; /* Margin for spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.add-note-button:hover {
+    background-color: #ff1493; /* Deeper pink on hover */
+}
+
+/* Main Content Adjustment */
+main {
+    margin-left: 20%; /* Space for the aside */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the content vertically */
+    text-align: center; /* Center align the text */
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 10px;
+    left: calc(15% + 20px); /* Adjust based on aside width and padding */
+}
+
+form {
+    width: 100%;
+    max-width: 600px; /* Set a maximum width for the form */
+    margin: 0 auto; /* Center the form */
+    padding: 20px; /* Padding for better appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: white; /* Background color for the form */
+    border-radius: 10px; /* Rounded corners for the form */
+}
+
+.features {
+    width: calc(100% - 20%); /* Adjust the width to account for the aside */
+    max-width: 800px; /* Set a maximum width for the features container */
+    margin: 50px auto; /* Center the features container */
+    padding: 20px; /* Padding for better appearance */
+}
