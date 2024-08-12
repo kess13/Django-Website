@@ -1,0 +1,25 @@
+
+        .custom-form {
+            max-width: 400px;
+            margin: auto;
+
+
+
+
+        }
+
+        .alert-danger{
+             max-width: 400px;
+        }
+
+
+form button[name="reg"] {
+    margin-left: 10px;
+}
+
+form button[name="register"] {
+    margin-top: 6px;
+}
+
+
+
