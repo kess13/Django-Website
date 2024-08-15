@@ -22,7 +22,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('members/', include('members.urls')),  # Custom member-related URLs
+    path('', include('members.urls')),  # Custom member-related URLs
 
 ]
 
