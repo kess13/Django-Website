@@ -88,7 +88,7 @@ def main(request):
 
 def export_users_data(request):
     # Ensure the user is authenticated and is lena13
-    if not request.user.is_authenticated or request.user.username != 'lena13':
+    if not request.user.is_authenticated or request.user.username != 'admin11':
         messages.error(request, "Unauthorized access")
         return redirect('login')  # Redirect to login if user is not authorized
 
