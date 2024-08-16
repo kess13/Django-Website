@@ -20,7 +20,7 @@ def login_user(request):
 
         if user is not None:
             login(request, user)
-            if user.username == "lena13":
+            if user.username == "admin11":
                 return redirect('export_users_data')  # Redirect to the export view if the user is lena13
             return redirect('success')  # Redirect to success page for other users
         else:
