@@ -86,6 +86,18 @@
             {% endif %}
         </div>
 
+          <div class="mb-3">
+            <label for="id_price" class="form-label">Пункт завантаження:</label>
+            {{ form.punkt }}
+            {% if form.punkt.errors %}
+            <div class="text-danger">
+                {% for error in form.punkt.errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
         <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#confirmModal" onclick="fillModal()">Додати</button>
     </form>
 </div>
@@ -106,6 +118,7 @@
                     <li><strong>Літри:</strong> <span id="confirmLitres"></span></li>
                     <li><strong>Ціна за літр:</strong> <span id="confirmPrice"></span></li>
                     <li><strong>Місто заправки:</strong> <span id="confirmMisto"></span></li>
+                    <li><strong>Пункт завантаження:</strong> <span id="confirmPunkt"></span></li>
                 </ul>
             </div>
             <div class="modal-footer">
@@ -123,6 +136,7 @@
         document.getElementById('confirmLitres').textContent = document.getElementById('id_litres').value;
         document.getElementById('confirmPrice').textContent = document.getElementById('id_price').value;
         document.getElementById('confirmMisto').textContent = document.getElementById('id_misto').value;
+        document.getElementById('confirmPunkt').textContent = document.getElementById('id_punkt').value;
     }
 
     document.getElementById('confirmSubmit').addEventListener('click', function() {
@@ -130,4 +144,4 @@
     });
 </script>
 
-</
+

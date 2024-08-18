@@ -78,8 +78,8 @@ class TaskForm(forms.ModelForm):
 
     massa = forms.DecimalField(
         label='Масса в кг',
-        max_digits=10,
-        decimal_places=2,
+        max_digits=20,
+        decimal_places=4,
         widget=forms.NumberInput(attrs={
             'class': 'form-control',
             'placeholder': 'Масса в кг',
@@ -95,7 +95,7 @@ class TaskForm(forms.ModelForm):
 
     litres = forms.DecimalField(
         label='Скільки літрів пального витратили',
-        max_digits=10,
+        max_digits=20,
         decimal_places=2,
         widget=forms.NumberInput(attrs={
             'class': 'form-control',
@@ -112,7 +112,7 @@ class TaskForm(forms.ModelForm):
 
     price = forms.DecimalField(
         label='Ціна за літр',
-        max_digits=10,
+        max_digits=20,
         decimal_places=2,
         widget=forms.NumberInput(attrs={
             'class': 'form-control',
@@ -137,7 +137,17 @@ class TaskForm(forms.ModelForm):
             'required': 'Будь ласка, введіть місто заправки.',
         }
     )
+    punkt = forms.CharField(
+        label='Пункт завантаження',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Пункт завантаження',
+        }),
+        error_messages={
+            'required': 'Будь ласка, введіть пункт завантаження.',
+        }
+    )
 
     class Meta:
         model = Task
-        fields = ('misto', 'gruz', 'litres', 'price', 'massa')
+        fields = ('misto', 'gruz', 'litres', 'price', 'massa', 'punkt')

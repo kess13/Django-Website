@@ -109,6 +109,7 @@ def export_users_data(request):
                 'Литры': task.litres,
                 'Цена за литр': task.price,
                 'Масса': task.massa,
+                'Пункт завантаження': task.punkt,
                 'Дата': task.date.strftime('%Y-%m-%d %H:%M:%S'),
             })
 
