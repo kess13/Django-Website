@@ -91,10 +91,7 @@ class TaskForm(forms.ModelForm):
             'step': '0.01',
             'min': '0',
         }),
-        error_messages={
-            'required': 'Будь ласка, введіть масу в кг.',
-            'invalid': 'Будь ласка, введіть дійсне число.',
-        }
+        required=False
     )
 
     litres = forms.DecimalField(
@@ -108,10 +105,7 @@ class TaskForm(forms.ModelForm):
             'step': '0.01',
             'min': '0',
         }),
-        error_messages={
-            'required': 'Будь ласка, введіть кількість літрів пального.',
-            'invalid': 'Будь ласка, введіть дійсне число.',
-        }
+        required=False
     )
 
     price = forms.DecimalField(
@@ -125,10 +119,7 @@ class TaskForm(forms.ModelForm):
             'step': '0.01',
             'min': '0',
         }),
-        error_messages={
-            'required': 'Будь ласка, введіть ціну за літр.',
-            'invalid': 'Будь ласка, введіть дійсне число.',
-        }
+        required=False
     )
 
     misto = forms.CharField(
@@ -137,9 +128,7 @@ class TaskForm(forms.ModelForm):
             'class': 'form-control',
             'placeholder': 'Місто заправки',
         }),
-        error_messages={
-            'required': 'Будь ласка, введіть місто заправки.',
-        }
+        required=False
     )
 
     punkt = forms.CharField(
@@ -148,9 +137,7 @@ class TaskForm(forms.ModelForm):
             'class': 'form-control',
             'placeholder': 'Пункт завантаження',
         }),
-        error_messages={
-            'required': 'Будь ласка, введіть пункт завантаження.',
-        }
+        required=False
     )
 
     derzh_nomer = forms.CharField(
@@ -159,9 +146,7 @@ class TaskForm(forms.ModelForm):
             'class': 'form-control',
             'placeholder': 'Держномер авто',
         }),
-        error_messages={
-            'required': 'Будь ласка, введіть держномер авто.',
-        }
+        required=False
     )
 
     ttn_nomer = forms.CharField(
@@ -170,9 +155,7 @@ class TaskForm(forms.ModelForm):
             'class': 'form-control',
             'placeholder': 'Номер ТТН',
         }),
-        error_messages={
-            'required': 'Будь ласка, введіть номер ТТН.',
-        }
+        required=False
     )
 
     skilki_vantazhu = forms.CharField(
@@ -181,9 +164,7 @@ class TaskForm(forms.ModelForm):
             'class': 'form-control',
             'placeholder': 'Кількість перевезеного вантажу',
         }),
-        error_messages={
-            'required': 'Будь ласка, введіть кількість перевезеного вантажу.',
-        }
+        required=False
     )
 
     odometr_viyizd = forms.CharField(
@@ -192,9 +173,7 @@ class TaskForm(forms.ModelForm):
             'class': 'form-control',
             'placeholder': 'Покази одометра при виїзді',
         }),
-        error_messages={
-            'required': 'Будь ласка, введіть покази одометра при виїзді.',
-        }
+        required=False
     )
 
     odometr_zayizd = forms.CharField(
@@ -203,9 +182,7 @@ class TaskForm(forms.ModelForm):
             'class': 'form-control',
             'placeholder': 'Покази одометра при заїзді',
         }),
-        error_messages={
-            'required': 'Будь ласка, введіть покази одометра при заїзді.',
-        }
+        required=False
     )
 
     zapravka_datetime = forms.DateTimeField(
@@ -215,10 +192,7 @@ class TaskForm(forms.ModelForm):
             'placeholder': 'Заправка дата час',
             'type': 'datetime-local',
         }),
-        error_messages={
-            'required': 'Будь ласка, введіть дату та час заправки.',
-            'invalid': 'Будь ласка, введіть дійсну дату та час.',
-        }
+        required=False
     )
 
     zavantazhennya_datetime = forms.DateTimeField(

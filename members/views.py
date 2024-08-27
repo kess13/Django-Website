@@ -107,7 +107,7 @@ def export_users_data(request):
                 'Мiсце заправки': task.misto,
                 'Груз': gruz_translation(task.gruz),
                 'Количество топлива всього': task.litres,
-                'Цена за литр': task.price,
+                'Ціна за паливо всього': task.price,
                 'Масса': task.massa,
                 'Мiсце завантаження': task.punkt,
                 'Мiсце розвантаження': task.rozvantazhennya_mistse, #!!!!!!!!!!!!!!!!!

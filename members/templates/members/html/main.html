@@ -26,6 +26,105 @@
         {% csrf_token %}
         <h2>Форма для додавання даних</h2>
 
+           <div class="mb-3">
+            <label for="id_derzh_nomer" class="form-label">Держномер авто:</label>
+            {{ form.derzh_nomer }}
+            {% if form.derzh_nomer.errors %}
+            <div class="text-danger">
+                {% for error in form.derzh_nomer.errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+           <div class="mb-3">
+            <label for="id_ttn_nomer" class="form-label">Номер ТТН:</label>
+            {{ form.ttn_nomer }}
+            {% if form.ttn_nomer.errors %}
+            <div class="text-danger">
+                {% for error in form.ttn_nomer.errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+         <div class="mb-3">
+            <label for="id_zavantazhennya_datetime" class="form-label">Дата і час завантаження:</label>
+            {{ form.zavantazhennya_datetime }}
+            {% if form.zavantazhennya_datetime.errors %}
+            <div class="text-danger">
+                {% for error in form.zavantazhennya_datetime.errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+          <div class="mb-3">
+            <label for="id_punkt" class="form-label">Місце завантаження:</label>
+            {{ form.punkt }}
+            {% if form.punkt.errors %}
+            <div class="text-danger">
+                {% for error in form.punkt.errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+
+        <div class="mb-3">
+            <label for="id_rozvantazhennya_datetime" class="form-label">Дата і час розвантаження:</label>
+            {{ form.rozvantazhennya_datetime }}
+            {% if form.rozvantazhennya_datetime.errors %}
+            <div class="text-danger">
+                {% for error in form.rozvantazhennya_datetime.errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+
+          <div class="mb-3">
+            <label for="id_rozvantazhennya_mistse" class="form-label">Місце розвантаження:</label>
+            {{ form.rozvantazhennya_mistse }}
+            {% if form.rozvantazhennya_mistse.errors %}
+            <div class="text-danger">
+                {% for error in form.rozvantazhennya_mistse.errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+      <div class="mb-3">
+                <label for="id_gruz" class="form-label">Який груз (кукурудза чи пшениця) :</label>
+                {{ form.gruz }}
+                {% if form.gruz.errors %}
+                <div class="text-danger">
+                    {% for error in form.gruz.errors %}
+                        {{ error }}<br>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+
+         <div class="mb-3">
+            <label for="id_skilki_vantazhu" class="form-label">Кількість перевезеного вантажу:</label>
+            {{ form.skilki_vantazhu }}
+            {% if form.skilki_vantazhu.errors %}
+            <div class="text-danger">
+                {% for error in form.skilki_vantazhu.errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+
         <div class="mb-3">
             <label for="id_massa" class="form-label">Масса в кг:</label>
             {{ form.massa }}
@@ -38,115 +137,8 @@
             {% endif %}
         </div>
 
-        <div class="mb-3">
-            <label for="id_gruz" class="form-label">Який груз (кукурудза чи пшениця):</label>
-            {{ form.gruz }}
-            {% if form.gruz.errors %}
-            <div class="text-danger">
-                {% for error in form.gruz.errors %}
-                    {{ error }}<br>
-                {% endfor %}
-            </div>
-            {% endif %}
-        </div>
 
-        <div class="mb-3">
-            <label for="id_litres" class="form-label">Скільки літрів пального витратили:</label>
-            {{ form.litres }}
-            {% if form.litres.errors %}
-            <div class="text-danger">
-                {% for error in form.litres.errors %}
-                    {{ error }}<br>
-                {% endfor %}
-            </div>
-            {% endif %}
-        </div>
-
-        <div class="mb-3">
-            <label for="id_price" class="form-label">Ціна за літр:</label>
-            {{ form.price }}
-            {% if form.price.errors %}
-            <div class="text-danger">
-                {% for error in form.price.errors %}
-                    {{ error }}<br>
-                {% endfor %}
-            </div>
-            {% endif %}
-        </div>
-
-        <div class="mb-3">
-            <label for="id_misto" class="form-label">Місце заправки:</label>
-            {{ form.misto }}
-            {% if form.misto.errors %}
-            <div class="text-danger">
-                {% for error in form.misto.errors %}
-                    {{ error }}<br>
-                {% endfor %}
-            </div>
-            {% endif %}
-        </div>
-
-        <div class="mb-3">
-            <label for="id_punkt" class="form-label">Місце завантаження:</label>
-            {{ form.punkt }}
-            {% if form.punkt.errors %}
-            <div class="text-danger">
-                {% for error in form.punkt.errors %}
-                    {{ error }}<br>
-                {% endfor %}
-            </div>
-            {% endif %}
-        </div>
-
-           <div class="mb-3">
-            <label for="id_rozvantazhennya_mistse" class="form-label">Місце розвантаження:</label>
-            {{ form.rozvantazhennya_mistse }}
-            {% if form.rozvantazhennya_mistse.errors %}
-            <div class="text-danger">
-                {% for error in form.rozvantazhennya_mistse.errors %}
-                    {{ error }}<br>
-                {% endfor %}
-            </div>
-            {% endif %}
-        </div>
-
-        <div class="mb-3">
-            <label for="id_derzh_nomer" class="form-label">Держномер авто:</label>
-            {{ form.derzh_nomer }}
-            {% if form.derzh_nomer.errors %}
-            <div class="text-danger">
-                {% for error in form.derzh_nomer.errors %}
-                    {{ error }}<br>
-                {% endfor %}
-            </div>
-            {% endif %}
-        </div>
-
-        <div class="mb-3">
-            <label for="id_ttn_nomer" class="form-label">Номер ТТН:</label>
-            {{ form.ttn_nomer }}
-            {% if form.ttn_nomer.errors %}
-            <div class="text-danger">
-                {% for error in form.ttn_nomer.errors %}
-                    {{ error }}<br>
-                {% endfor %}
-            </div>
-            {% endif %}
-        </div>
-
-        <div class="mb-3">
-            <label for="id_skilki_vantazhu" class="form-label">Кількість перевезеного вантажу:</label>
-            {{ form.skilki_vantazhu }}
-            {% if form.skilki_vantazhu.errors %}
-            <div class="text-danger">
-                {% for error in form.skilki_vantazhu.errors %}
-                    {{ error }}<br>
-                {% endfor %}
-            </div>
-            {% endif %}
-        </div>
-
-        <div class="mb-3">
+         <div class="mb-3">
             <label for="id_odometr_viyizd" class="form-label">Покази одометра при виїзді:</label>
             {{ form.odometr_viyizd }}
             {% if form.odometr_viyizd.errors %}
@@ -170,7 +162,7 @@
             {% endif %}
         </div>
 
-        <div class="mb-3">
+          <div class="mb-3">
             <label for="id_zapravka_datetime" class="form-label">Дата і час заправки:</label>
             {{ form.zapravka_datetime }}
             {% if form.zapravka_datetime.errors %}
@@ -182,12 +174,14 @@
             {% endif %}
         </div>
 
-        <div class="mb-3">
-            <label for="id_zavantazhennya_datetime" class="form-label">Дата і час завантаження:</label>
-            {{ form.zavantazhennya_datetime }}
-            {% if form.zavantazhennya_datetime.errors %}
+
+
+           <div class="mb-3">
+            <label for="id_misto" class="form-label">Місце заправки:</label>
+            {{ form.misto }}
+            {% if form.misto.errors %}
             <div class="text-danger">
-                {% for error in form.zavantazhennya_datetime.errors %}
+                {% for error in form.misto.errors %}
                     {{ error }}<br>
                 {% endfor %}
             </div>
@@ -195,18 +189,28 @@
         </div>
 
         <div class="mb-3">
-            <label for="id_rozvantazhennya_datetime" class="form-label">Дата і час розвантаження:</label>
-            {{ form.rozvantazhennya_datetime }}
-            {% if form.rozvantazhennya_datetime.errors %}
+            <label for="id_litres" class="form-label">Скільки літрів пального заправили:</label>
+            {{ form.litres }}
+            {% if form.litres.errors %}
             <div class="text-danger">
-                {% for error in form.rozvantazhennya_datetime.errors %}
+                {% for error in form.litres.errors %}
                     {{ error }}<br>
                 {% endfor %}
             </div>
             {% endif %}
         </div>
 
-
+        <div class="mb-3">
+            <label for="id_price" class="form-label">Ціна за паливо всього:</label>
+            {{ form.price }}
+            {% if form.price.errors %}
+            <div class="text-danger">
+                {% for error in form.price.errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
 
         <div class="mb-3">
             <label for="id_prymitky" class="form-label">Примітки:</label>
