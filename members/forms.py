@@ -59,6 +59,10 @@ class RegisterUserForm(CustomUserCreationForm):
 from django import forms
 from .models import Task
 
+from django import forms
+from .models import Task
+
+
 class TaskForm(forms.ModelForm):
     GRUZ_CHOICES = [
         ('corn', 'Кукурудза'),
@@ -137,8 +141,9 @@ class TaskForm(forms.ModelForm):
             'required': 'Будь ласка, введіть місто заправки.',
         }
     )
+
     punkt = forms.CharField(
-        label='Пункт завантаження',
+        label='Мiсце завантаження',
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': 'Пункт завантаження',
@@ -148,6 +153,120 @@ class TaskForm(forms.ModelForm):
         }
     )
 
+    derzh_nomer = forms.CharField(
+        label='Держномер авто',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Держномер авто',
+        }),
+        error_messages={
+            'required': 'Будь ласка, введіть держномер авто.',
+        }
+    )
+
+    ttn_nomer = forms.CharField(
+        label='Номер ТТН',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Номер ТТН',
+        }),
+        error_messages={
+            'required': 'Будь ласка, введіть номер ТТН.',
+        }
+    )
+
+    skilki_vantazhu = forms.CharField(
+        label='Кількість перевезеного вантажу',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Кількість перевезеного вантажу',
+        }),
+        error_messages={
+            'required': 'Будь ласка, введіть кількість перевезеного вантажу.',
+        }
+    )
+
+    odometr_viyizd = forms.CharField(
+        label='Покази одометра при виїзді',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Покази одометра при виїзді',
+        }),
+        error_messages={
+            'required': 'Будь ласка, введіть покази одометра при виїзді.',
+        }
+    )
+
+    odometr_zayizd = forms.CharField(
+        label='Покази одометра при заїзді',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Покази одометра при заїзді',
+        }),
+        error_messages={
+            'required': 'Будь ласка, введіть покази одометра при заїзді.',
+        }
+    )
+
+    zapravka_datetime = forms.DateTimeField(
+        label='Заправка дата час',
+        widget=forms.DateTimeInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Заправка дата час',
+            'type': 'datetime-local',
+        }),
+        error_messages={
+            'required': 'Будь ласка, введіть дату та час заправки.',
+            'invalid': 'Будь ласка, введіть дійсну дату та час.',
+        }
+    )
+
+    zavantazhennya_datetime = forms.DateTimeField(
+        label='Дата і час завантаження',
+        widget=forms.DateTimeInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Дата і час завантаження',
+            'type': 'datetime-local',
+        }),
+        required=False,
+    )
+
+
+    rozvantazhennya_datetime = forms.DateTimeField(
+        label='Дата і час розвантаження',
+        widget=forms.DateTimeInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Дата і час розвантаження',
+            'type': 'datetime-local',
+        }),
+        required=False,
+    )
+
+    rozvantazhennya_mistse = forms.CharField(
+        label='Місце розвантаження',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Місце розвантаження',
+        }),
+        required=False,
+    )
+
+    prymitky = forms.CharField(
+        label='Примітки',
+        widget=forms.Textarea(attrs={
+            'class': 'form-control',
+            'placeholder': 'Примітки',
+            'rows': 3,
+        }),
+        required=False,
+    )
+
     class Meta:
         model = Task
-        fields = ('misto', 'gruz', 'litres', 'price', 'massa', 'punkt')
+        fields = [
+            'misto', 'gruz', 'litres', 'price', 'massa', 'punkt', 'derzh_nomer',
+            'ttn_nomer', 'skilki_vantazhu', 'odometr_viyizd', 'odometr_zayizd',
+            'zavantazhennya_datetime',
+            'rozvantazhennya_datetime', 'rozvantazhennya_mistse',
+            'zapravka_datetime', 'prymitky'
+        ]

@@ -104,13 +104,24 @@ def export_users_data(request):
             data.append({
                 'Имя': user.first_name,
                 'Фамилия': user.last_name,
-                'Город заправки': task.misto,
+                'Мiсце заправки': task.misto,
                 'Груз': gruz_translation(task.gruz),
-                'Литры': task.litres,
+                'Количество топлива всього': task.litres,
                 'Цена за литр': task.price,
                 'Масса': task.massa,
-                'Пункт завантаження': task.punkt,
-                'Дата': task.date.strftime('%Y-%m-%d %H:%M:%S'),
+                'Мiсце завантаження': task.punkt,
+                'Мiсце розвантаження': task.rozvantazhennya_mistse, #!!!!!!!!!!!!!!!!!
+
+                'Держномер авто': task.derzh_nomer,
+                'Номер ТТН': task.ttn_nomer,
+                'Дата и время завантаження': task.zavantazhennya_datetime.strftime('%Y-%m-%d %H:%M:%S') if task.zavantazhennya_datetime else '',
+                'Дата и время розвантаження': task.rozvantazhennya_datetime.strftime('%Y-%m-%d %H:%M:%S') if task.rozvantazhennya_datetime else '',
+                'Количество перевезенного вантажу': task.skilki_vantazhu,
+                'Показ одометра при выезде': task.odometr_viyizd,
+                'Показ одометра при заезде': task.odometr_zayizd,
+                'Заправка дата и время': task.zapravka_datetime.strftime('%Y-%m-%d %H:%M:%S') if task.zapravka_datetime else '',
+                'Примечания': task.prymitky,
+                'Дата отправки формы': task.date.strftime('%Y-%m-%d %H:%M:%S'),
             })
 
     df = pd.DataFrame(data)
