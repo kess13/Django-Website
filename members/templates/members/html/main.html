@@ -239,21 +239,22 @@
             <div class="modal-body">
                 <p>Будь ласка, підтверджте введені дані:</p>
                 <ul>
-                    <li><strong>Масса в кг:</strong> <span id="confirmMassa"></span></li>
-                    <li><strong>Який груз:</strong> <span id="confirmGruz"></span></li>
-                    <li><strong>Скільки літрів пального витратили:</strong> <span id="confirmLitres"></span></li>
-                    <li><strong>Ціна за паливо всього:</strong> <span id="confirmPrice"></span></li>
-                    <li><strong>Мiсце заправки:</strong> <span id="confirmMisto"></span></li>
-                    <li><strong>Місце завантаження:</strong> <span id="confirmPunkt"></span></li>
                     <li><strong>Держномер авто:</strong> <span id="confirmDerzhNomer"></span></li>
-                    <li><strong>Номер ТТН:</strong> <span id="confirmTtnNomer"></span></li>
-                    <li><strong>Кількість перевезеного вантажу:</strong> <span id="confirmSkilkiVantazhu"></span></li>
-                    <li><strong>Покази одометра при виїзді:</strong> <span id="confirmOdometrViyizd"></span></li>
-                    <li><strong>Покази одометра при заїзді:</strong> <span id="confirmOdometrZayizd"></span></li>
-                    <li><strong>Дата і час заправки:</strong> <span id="confirmZapravkaDatetime"></span></li>
+                     <li><strong>Номер ТТН:</strong> <span id="confirmTtnNomer"></span></li>
                     <li><strong>Дата і час завантаження:</strong> <span id="confirmZavantazhennyaDatetime"></span></li>
-                    <li><strong>Дата і час розвантаження:</strong> <span id="confirmRozvantazhennyaDatetime"></span></li>
+                     <li><strong>Місце завантаження:</strong> <span id="confirmPunkt"></span></li>
+                     <li><strong>Дата і час розвантаження:</strong> <span id="confirmRozvantazhennyaDatetime"></span></li>
                     <li><strong>Місце розвантаження:</strong> <span id="confirmRozvantazhennyaMistse"></span></li>
+                     <li><strong>Який груз:</strong> <span id="confirmGruz"></span></li>
+                    <li><strong>Масса в кг:</strong> <span id="confirmMassa"></span></li>
+                     <li><strong>Кількість перевезеного вантажу:</strong> <span id="confirmSkilkiVantazhu"></span></li>
+                     <li><strong>Покази одометра при виїзді:</strong> <span id="confirmOdometrViyizd"></span></li>
+                    <li><strong>Покази одометра при заїзді:</strong> <span id="confirmOdometrZayizd"></span></li>
+                     <li><strong>Дата і час заправки:</strong> <span id="confirmZapravkaDatetime"></span></li>
+                     <li><strong>Мiсце заправки:</strong> <span id="confirmMisto"></span></li>
+                    <li><strong>Скільки літрів пального витратили:</strong> <span id="confirmLitres"></span></li>
+
+                    <li><strong>Ціна за паливо всього:</strong> <span id="confirmPrice"></span></li>
                     <li><strong>Примітки:</strong> <span id="confirmPrymitky"></span></li>
                 </ul>
             </div>
@@ -268,19 +269,22 @@
 <script>
     // Function to populate modal with form values
     function fillModal() {
+        document.getElementById('confirmDerzhNomer').textContent = document.getElementById('id_derzh_nomer').value;
+        document.getElementById('confirmTtnNomer').textContent = document.getElementById('id_ttn_nomer').value;
+        document.getElementById('confirmZavantazhennyaDatetime').textContent = document.getElementById('id_zavantazhennya_datetime').value;
         document.getElementById('confirmMassa').textContent = document.getElementById('id_massa').value;
         document.getElementById('confirmGruz').textContent = document.getElementById('id_gruz').value;
         document.getElementById('confirmLitres').textContent = document.getElementById('id_litres').value;
         document.getElementById('confirmPrice').textContent = document.getElementById('id_price').value;
         document.getElementById('confirmMisto').textContent = document.getElementById('id_misto').value;
         document.getElementById('confirmPunkt').textContent = document.getElementById('id_punkt').value;
-        document.getElementById('confirmDerzhNomer').textContent = document.getElementById('id_derzh_nomer').value;
-        document.getElementById('confirmTtnNomer').textContent = document.getElementById('id_ttn_nomer').value;
+
+
         document.getElementById('confirmSkilkiVantazhu').textContent = document.getElementById('id_skilki_vantazhu').value;
         document.getElementById('confirmOdometrViyizd').textContent = document.getElementById('id_odometr_viyizd').value;
         document.getElementById('confirmOdometrZayizd').textContent = document.getElementById('id_odometr_zayizd').value;
         document.getElementById('confirmZapravkaDatetime').textContent = document.getElementById('id_zapravka_datetime').value;
-        document.getElementById('confirmZavantazhennyaDatetime').textContent = document.getElementById('id_zavantazhennya_datetime').value;
+
         document.getElementById('confirmRozvantazhennyaDatetime').textContent = document.getElementById('id_rozvantazhennya_datetime').value;
         document.getElementById('confirmRozvantazhennyaMistse').textContent = document.getElementById('id_rozvantazhennya_mistse').value;
         document.getElementById('confirmPrymitky').textContent = document.getElementById('id_prymitky').value;
