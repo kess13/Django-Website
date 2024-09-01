@@ -5,10 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Task(models.Model):
-    GRUZ_CHOICES = [
-        ('corn', 'Кукурудза'),
-        ('wheat', 'Пшениця'),
-    ]
+
 
     # Existing fields
     user = models.ForeignKey(User, on_delete=models.CASCADE)  # Add this line to link Task to User

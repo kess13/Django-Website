@@ -105,12 +105,12 @@ class TaskForm(forms.ModelForm):
     )
 
     price = forms.DecimalField(
-        label='Ціна за літр',
+        label='Ціна за паливо всього:',
         max_digits=20,
         decimal_places=2,
         widget=forms.NumberInput(attrs={
             'class': 'form-control',
-            'placeholder': 'Ціна за літр',
+            'placeholder': 'Ціна за паливо всього:',
             'type': 'number',
             'step': '0.01',
             'min': '0',

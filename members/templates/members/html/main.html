@@ -242,7 +242,7 @@
                     <li><strong>Масса в кг:</strong> <span id="confirmMassa"></span></li>
                     <li><strong>Який груз:</strong> <span id="confirmGruz"></span></li>
                     <li><strong>Скільки літрів пального витратили:</strong> <span id="confirmLitres"></span></li>
-                    <li><strong>Ціна за літр:</strong> <span id="confirmPrice"></span></li>
+                    <li><strong>Ціна за паливо всього:</strong> <span id="confirmPrice"></span></li>
                     <li><strong>Мiсце заправки:</strong> <span id="confirmMisto"></span></li>
                     <li><strong>Місце завантаження:</strong> <span id="confirmPunkt"></span></li>
                     <li><strong>Держномер авто:</strong> <span id="confirmDerzhNomer"></span></li>
@@ -269,7 +269,7 @@
     // Function to populate modal with form values
     function fillModal() {
         document.getElementById('confirmMassa').textContent = document.getElementById('id_massa').value;
-        document.getElementById('confirmGruz').textContent = document.getElementById('id_gruz').selectedOptions[0].text;
+        document.getElementById('confirmGruz').textContent = document.getElementById('id_gruz').value;
         document.getElementById('confirmLitres').textContent = document.getElementById('id_litres').value;
         document.getElementById('confirmPrice').textContent = document.getElementById('id_price').value;
         document.getElementById('confirmMisto').textContent = document.getElementById('id_misto').value;
