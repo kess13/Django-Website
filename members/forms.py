@@ -64,14 +64,10 @@ from .models import Task
 
 
 class TaskForm(forms.ModelForm):
-    GRUZ_CHOICES = [
-        ('corn', 'Кукурудза'),
-        ('wheat', 'Пшениця'),
-    ]
 
-    gruz = forms.ChoiceField(
-        choices=GRUZ_CHOICES,
-        widget=forms.Select(attrs={
+
+    gruz = forms.CharField(
+        widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': 'Який груз',
         }),
