@@ -13,8 +13,8 @@ class Task(models.Model):
     # Existing fields
     user = models.ForeignKey(User, on_delete=models.CASCADE)  # Add this line to link Task to User
     misto = models.CharField('Name', max_length=50,null=True, blank=True)  # Field to 255 chars
-    gruz = models.CharField('Description', max_length=10, choices=GRUZ_CHOICES)
-    litres = models.CharField('Litres', max_length=20,null=True, blank=True)
+    gruz  =  models.CharField('Description', max_length=50,null=True, blank=True)
+    litres = models.CharField('Litres', max_length=20, null=True, blank=True)
     price = models.CharField('Price', max_length=25,null=True, blank=True)
     massa = models.CharField('Massa', max_length=50,null=True, blank=True)
     punkt = models.CharField('Punkt', max_length=50,null=True, blank=True)

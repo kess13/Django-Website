@@ -98,14 +98,14 @@ def export_users_data(request):
 
     for user in users:
         tasks = Task.objects.filter(user=user)
-        gruz_translation = lambda gruz: 'Кукурудза' if gruz == 'corn' else 'Пшениця' if gruz == 'wheat' else gruz
+
 
         for task in tasks:
             data.append({
                 'Имя': user.first_name,
                 'Фамилия': user.last_name,
                 'Мiсце заправки': task.misto,
-                'Груз': gruz_translation(task.gruz),
+                'Груз': task.gruz,
                 'Количество топлива всього': task.litres,
                 'Ціна за паливо всього': task.price,
                 'Масса': task.massa,
