@@ -71,9 +71,7 @@ class TaskForm(forms.ModelForm):
             'class': 'form-control',
             'placeholder': 'Який груз',
         }),
-        error_messages={
-            'required': 'Будь ласка, виберіть тип груза.',
-        }
+        required=False
     )
 
     massa = forms.DecimalField(
