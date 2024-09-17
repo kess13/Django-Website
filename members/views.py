@@ -61,17 +61,12 @@ def main(request):
             today = datetime.now().date()
             user = request.user
 
-            # Check if a task exists for the user for today's date
-            if Task.objects.filter(user=user, date__date=today).exists():
-                # If a task already exists, show an error message
-                error = "Вы уже ввели данные сегодня. Повторный ввод невозможен."
-            else:
-                # If no task exists, save the new task
-                task = form.save(commit=False)
-                task.user = user
-                task.date = datetime.now()  # Set the current date and time
-                task.save()
-                return redirect('success')  # Redirect to a success page
+
+            task = form.save(commit=False)
+            task.user = user
+            task.date = datetime.now()  # Set the current date and time
+            task.save()
+            return redirect('success')  # Redirect to a success page
 
     else:
         form = TaskForm()
