@@ -225,6 +225,8 @@
         </div>
 
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmationModal">Додати</button>
+        <a href="{% url 'export_user_data' %}" class="btn btn-primary">Показати мою iсторiю</a>
+
     </form>
 </div>
 
@@ -236,6 +238,7 @@
                 <h5 class="modal-title" id="confirmationModalLabel">Підтвердження</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
             <div class="modal-body">
                 <p>Будь ласка, підтверджте введені дані:</p>
                 <ul>

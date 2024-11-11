@@ -129,3 +129,43 @@ def export_users_data(request):
 
     return response
 
+def export_user_data(request):
+    # Get the logged-in user
+    user = request.user
+    tasks = Task.objects.filter(user=user)
+
+    data = []
+    for task in tasks:
+        data.append({
+            'Имя': user.first_name,
+            'Фамилия': user.last_name,
+            'Мiсце заправки': task.misto,
+            'Груз': task.gruz,
+            'Количество топлива всього': task.litres,
+            'Ціна за паливо всього': task.price,
+            'Масса': task.massa,
+            'Мiсце завантаження': task.punkt,
+            'Мiсце розвантаження': task.rozvantazhennya_mistse,
+            'Держномер авто': task.derzh_nomer,
+            'Номер ТТН': task.ttn_nomer,
+            'Дата и время завантаження': task.zavantazhennya_datetime.strftime('%Y-%m-%d %H:%M:%S') if task.zavantazhennya_datetime else '',
+            'Дата и время розвантаження': task.rozvantazhennya_datetime.strftime('%Y-%m-%d %H:%M:%S') if task.rozvantazhennya_datetime else '',
+            'Количество перевезенного вантажу': task.skilki_vantazhu,
+            'Показ одометра при выезде': task.odometr_viyizd,
+            'Показ одометра при заезде': task.odometr_zayizd,
+            'Заправка дата и время': task.zapravka_datetime.strftime('%Y-%m-%d %H:%M:%S') if task.zapravka_datetime else '',
+            'Примечания': task.prymitky,
+            'Дата отправки формы': task.date.strftime('%Y-%m-%d %H:%M:%S'),
+        })
+
+    df = pd.DataFrame(data)
+
+    # Create an Excel response
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = f'attachment; filename={user.username}_data.xlsx'
+
+    with pd.ExcelWriter(response, engine='openpyxl') as writer:
+        df.to_excel(writer, index=False)
+
+    return response
+
